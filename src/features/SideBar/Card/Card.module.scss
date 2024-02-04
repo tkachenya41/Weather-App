@@ -1,0 +1,51 @@
+@use '@/assets/styles/variables' as *;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+
+  &--overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgb(0 0 0 / 40%);
+  }
+
+  &--background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-size: cover;
+  }
+
+  &--weather,
+  &--text {
+    z-index: 1;
+  }
+
+  &--weather {
+    h3 {
+      @include font(6.8rem, normal, 0.02rem);
+    }
+  }
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      @include font(2rem, 39px, 0.02rem);
+    }
+  }
+
+  p {
+    @include font(1.3rem, 28px, 0.02rem);
+  }
+}
