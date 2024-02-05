@@ -15,10 +15,6 @@
       "left",
       "z-index",
       "overflow",
-      "background-color",
-      "color",
-      "font-family",
-      "font-size",
       "width",
       "height",
       "max-width",
@@ -28,12 +24,21 @@
       "flex-wrap",
       "justify-content",
       "align-items",
-      "text-align",
       "gap",
       "margin",
       "padding",
+      "font-family",
+      "font-style",
+      "font-size",
+      "line-height",
+      "font-weight",
+      "text-align",
+      "color",
+      "background-color",
       "border",
-      "border-radius"
+      "border-radius",
+      "opacity",
+      "transition"
     ]
   }
 }

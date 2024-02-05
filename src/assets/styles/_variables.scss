@@ -1,0 +1,5 @@
+@mixin font($size, $lineHeight, $letterSpacing) {
+  font-size: $size;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
