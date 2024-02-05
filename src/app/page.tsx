@@ -8,7 +8,7 @@ import { Minsk, errorText } from '@/api/constants';
 
 export default function Home() {
   const [response, setResponse] = useState<WeatherData | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     (async function () {
