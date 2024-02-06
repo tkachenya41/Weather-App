@@ -4,7 +4,7 @@ import Styles from './WeekList.module.scss';
 export function WeekList() {
   return (
     <div className={Styles.container}>
-      <p>10-DAY FORECAST</p>
+      <p>7-DAY FORECAST</p>
       <WeekItem />
       <WeekItem />
       <WeekItem />
