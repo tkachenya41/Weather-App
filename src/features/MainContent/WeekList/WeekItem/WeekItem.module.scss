@@ -1,0 +1,12 @@
+.container {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+
+  &--days,
+  &--weather {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+}
