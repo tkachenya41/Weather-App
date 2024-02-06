@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Styles from './WeekItem.module.scss';
-import { CloudySun } from '@/components/Icons/CloudySun';
+import { ProgressBar } from '@/components/Icons/ProgressBar';
 
 export function WeekItem() {
   return (
@@ -11,7 +11,7 @@ export function WeekItem() {
       </div>
       <div className={Styles['container--weather']}>
         <p>18°</p>
-        <CloudySun />
+        <ProgressBar />
         <p>27°</p>
       </div>
     </div>

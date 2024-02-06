@@ -3,10 +3,10 @@
 .card {
   position: relative;
   overflow: hidden;
-  color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
   padding: 1.2rem;
+  color: var(--secondary-color);
   border-radius: 1.2rem;
 
   &--overlay {

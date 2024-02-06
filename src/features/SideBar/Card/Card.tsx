@@ -1,11 +1,10 @@
+import { Video } from '@/components/Video/Video';
 import Styles from './Card.module.scss';
 
-export const Card = () => {
+export function Card() {
   return (
     <div className={Styles.card}>
-      <video autoPlay muted loop className={Styles['card--background']}>
-        <source src='./clouds.mp4' type='video/mp4' />
-      </video>
+      <Video src='./clouds.mp4' className={Styles['card--background']} />
       <div className={Styles['card--overlay']}></div>
 
       <div className={Styles['card--text']}>
@@ -21,4 +20,4 @@ export const Card = () => {
       </div>
     </div>
   );
-};
+}
