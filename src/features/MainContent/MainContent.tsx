@@ -3,6 +3,7 @@ import { BriefCard } from './BriefCard/BriefCard';
 import Styles from './MainContent.module.scss';
 import { WeekList } from './WeekList/WeekList';
 import { DayList } from './DayList/DayList';
+import { RateList } from './RateList/RateList';
 
 export function MainContent() {
   return (
@@ -11,7 +12,10 @@ export function MainContent() {
       <BriefCard />
       <div className={Styles['container--lists']}>
         <WeekList />
-        <DayList />
+        <div className={Styles['container--days']}>
+          <DayList />
+          <RateList />
+        </div>
       </div>
     </div>
   );

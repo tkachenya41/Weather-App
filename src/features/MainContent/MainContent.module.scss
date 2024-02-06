@@ -19,4 +19,9 @@
     display: flex;
     justify-content: space-between;
   }
+  &--days {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
