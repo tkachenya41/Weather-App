@@ -3,3 +3,9 @@
   line-height: $lineHeight;
   letter-spacing: $letterSpacing;
 }
+
+@mixin background($border, $background, $backdrop-filter) {
+  border-radius: $border;
+  background: $background;
+  backdrop-filter: $backdrop-filter;
+}

@@ -1,0 +1,22 @@
+@use '@/assets/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  color: var(--secondary-color);
+
+  span {
+    @include font(2.3rem, normal, -0.185px);
+  }
+
+  h5 {
+    @include font(6.4rem, normal, -0.51px);
+  }
+
+  p {
+    @include font(1.5rem, normal, -0.51px);
+  }
+}

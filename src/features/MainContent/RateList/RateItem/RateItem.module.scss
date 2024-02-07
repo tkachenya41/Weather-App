@@ -1,0 +1,21 @@
+@use '@/assets/styles/variables' as *;
+.container {
+  width: 9.7rem;
+  height: 9.7rem;
+  padding: 1rem;
+  border: 0.04rem solid rgba(255, 255, 255, 0.25);
+  @include background(1rem, var(--secondary-background-color), blur(145px));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &--title {
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+  }
+  span {
+    text-align: center;
+    @include font(2.3rem, normal, 0.02rem);
+  }
+}

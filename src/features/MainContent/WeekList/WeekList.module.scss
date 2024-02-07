@@ -1,0 +1,17 @@
+@use '@/assets/styles/variables' as *;
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  border: 0.03rem solid rgb(255 255 255 / 0%);
+
+  @include background(1rem, var(--secondary-background-color), blur(145px));
+
+  p {
+    @include font(1rem, normal, 0.51px);
+  }
+}

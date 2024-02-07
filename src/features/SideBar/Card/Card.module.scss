@@ -3,10 +3,10 @@
 .card {
   position: relative;
   overflow: hidden;
-  color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
   padding: 1.2rem;
+  color: var(--secondary-color);
   border-radius: 1.2rem;
 
   &--overlay {
@@ -30,7 +30,7 @@
   }
 
   &--weather {
-    h3 {
+    span {
       @include font(6.8rem, normal, 0.02rem);
     }
   }
@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    h3 {
+    span {
       @include font(2rem, 39px, 0.02rem);
     }
   }
