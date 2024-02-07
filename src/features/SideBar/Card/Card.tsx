@@ -9,13 +9,13 @@ export function Card() {
 
       <div className={Styles['card--text']}>
         <div>
-          <h3>My location</h3>
+          <span>My location</span>
           <p>Minsk</p>
         </div>
         <p>Partly Cloudy</p>
       </div>
       <div className={Styles['card--weather']}>
-        <h3>21°</h3>
+        <span>21°</span>
         <p>H:29° L:15°</p>
       </div>
     </div>

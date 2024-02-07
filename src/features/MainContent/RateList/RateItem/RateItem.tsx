@@ -9,7 +9,7 @@ export function RateItem() {
           <Image src={'./humidity.svg'} alt='icon' width={28} height={28} />
           <p>HUMIDITY</p>
         </div>
-        <h3>54%</h3>
+        <span>54%</span>
       </div>
       <p>The dew point is 21° right now.</p>
     </div>
