@@ -1,3 +1,11 @@
+@use '@/assets/styles/variables' as *;
+
 .main {
-  display: flex;
+  display: block;
+  position: relative;
+
+  @include media-desktop {
+    position: static;
+    display: flex;
+  }
 }

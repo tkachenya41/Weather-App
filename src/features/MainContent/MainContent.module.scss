@@ -1,27 +1,35 @@
+@use '@/assets/styles/variables' as *;
+
 .container {
   position: relative;
-  overflow: hidden;
-  width: 65%;
+  width: 100%;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+
+  @include media-desktop {
+    width: 65%;
+  }
 
   &--background {
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
     z-index: -1;
-    min-height: 100vh;
-    background-size: cover;
+    object-fit: cover;
   }
 
   &--lists {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
   &--days {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3rem;
   }
 }
