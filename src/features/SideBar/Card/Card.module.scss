@@ -3,6 +3,7 @@
 .card {
   position: relative;
   overflow: hidden;
+  width: 13rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,6 +12,7 @@
   border-radius: 1.2rem;
 
   @include media-mobile {
+    width: auto;
     flex-wrap: nowrap;
   }
 

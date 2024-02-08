@@ -3,9 +3,9 @@
 .container {
   position: relative;
   width: 100%;
-  padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  padding: 1.25rem;
 
   @include media-desktop {
     width: 65%;
@@ -15,8 +15,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     z-index: -1;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -26,6 +26,7 @@
     justify-content: center;
     gap: 1rem;
   }
+
   &--days {
     display: flex;
     flex-direction: column;

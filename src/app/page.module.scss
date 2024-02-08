@@ -1,8 +1,8 @@
 @use '@/assets/styles/variables' as *;
 
 .main {
-  display: block;
   position: relative;
+  display: block;
 
   @include media-desktop {
     position: static;
