@@ -7,6 +7,9 @@ export function RateList() {
       <RateItem />
       <RateItem />
       <RateItem />
+      <RateItem />
+      <RateItem />
+      <RateItem />
     </div>
   );
 }

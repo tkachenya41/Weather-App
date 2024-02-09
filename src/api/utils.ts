@@ -1,28 +1,31 @@
-import { WeatherApiResponse } from '@openmeteo/sdk/weather-api-response';
+import { VariablesWithTime } from '@openmeteo/sdk/variables-with-time';
 
-export function processWeatherData(response: WeatherApiResponse) {
-  const range = (start: number, stop: number, step: number) =>
-    Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
-  const utcOffsetSeconds = response.utcOffsetSeconds();
-  const current = response.current()!;
-  const daily = response.daily()!;
+export const createRangeArray = (type: VariablesWithTime, utcOffsetSeconds: number) => {
+  const startTime = Number(type.time());
+  const endTime = Number(type.timeEnd());
+  const interval = type.interval();
+  return Array.from(
+    { length: (endTime - startTime) / interval },
+    (_, i) => new Date((startTime + i * interval + utcOffsetSeconds) * 1000),
+  );
+};
 
-  return {
-    current: {
-      time: new Date(
-        (Number(current.time()) + utcOffsetSeconds) * 1000,
-      ).toLocaleDateString(),
-      temperature2m: `${current.variables(0)!.value().toFixed()}°C`,
-      relativeHumidity2m: `${current.variables(1)!.value()}%`,
-      isDay: current.variables(2)!.value() ? 'Day' : 'Night',
-    },
-    daily: {
-      time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval()).map(
-        (t) => new Date((t + utcOffsetSeconds) * 1000).toLocaleDateString(),
-      ),
-      temperature2mMax: daily.variables(0)!.valuesArray()!,
-      temperature2mMin: daily.variables(1)!.valuesArray()!,
-      weatherCode: daily.variables(2)!.valuesArray()!,
-    },
-  };
-}
+export const findCurrentIndex = (
+  type: VariablesWithTime,
+  current: Date,
+  utcOffsetSeconds: number,
+) => {
+  const dateArray = createRangeArray(type, utcOffsetSeconds);
+  return dateArray.findIndex((time) => current < time);
+};
+
+export const getNextSevenItems = (
+  type: VariablesWithTime,
+  currentIndex: number,
+  indexOfArr: number,
+) => {
+  return type
+    .variables(indexOfArr)!
+    .valuesArray()!
+    .slice(currentIndex, currentIndex + 8);
+};
