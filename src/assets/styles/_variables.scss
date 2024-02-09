@@ -1,3 +1,32 @@
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$tv: 1440px;
+
+@mixin media-mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin media-tv {
+  @media (min-width: $tv) {
+    @content;
+  }
+}
+
 @mixin font($size, $lineHeight, $letterSpacing) {
   font-size: $size;
   line-height: $lineHeight;

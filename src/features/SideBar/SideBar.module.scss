@@ -1,10 +1,39 @@
+@use '@/assets/styles/variables' as *;
+
 .container {
-  width: 35%;
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: 1.9rem;
   padding: 1.6rem 1.25rem;
-  min-height: 100vh;
+  min-height: 100%;
   background: var(--primary-background-color);
   backdrop-filter: blur(10rem);
+  translate: 100%;
+
+  &[data-open='true'] {
+    translate: 0%;
+  }
+
+  @include media-desktop {
+    position: static;
+    width: 35%;
+    min-height: 100vh;
+    translate: 0;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 0.6rem;
+
+  @include media-desktop {
+    display: none;
+  }
 }
