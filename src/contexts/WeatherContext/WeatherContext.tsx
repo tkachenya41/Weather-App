@@ -15,9 +15,8 @@ export function useWeather(): WeatherContextProps {
   const context = useContext(WeatherContext);
 
   if (!context) {
-    throw new Error('useSearch must be used within a SearchProvider');
+    throw new Error('useWeather must be used within a WeatherProvide');
   }
-  // idnvenoij
 
   return context;
 }
