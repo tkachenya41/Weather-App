@@ -12,14 +12,26 @@ export const fetchWeather = async ({
   const params = {
     latitude: latitude,
     longitude: longitude,
-    current: ['temperature_2m', 'relative_humidity_2m', 'is_day', 'weather_code'],
+    current: [
+      'temperature_2m',
+      'relative_humidity_2m',
+      'apparent_temperature',
+      'is_day',
+      'weather_code',
+    ],
     daily: [
       'temperature_2m_max',
       'temperature_2m_min',
       'weather_code',
       'precipitation_probability_max',
     ],
-    hourly: ['temperature_2m', 'precipitation_probability', 'weather_code'],
+    hourly: [
+      'temperature_2m',
+      'precipitation_probability',
+      'weather_code',
+      'visibility',
+      'uv_index',
+    ],
   };
 
   const responses = await fetchWeatherApi(API_URL, params);

@@ -2,7 +2,8 @@ export type WeatherData = {
   current: {
     time: string;
     temperature2m: string;
-    relativeHumidity2m: string;
+    relativeHumidity2m: number;
+    apparentTemperature: number;
     isDay: string;
     weatherCode: number;
   };
@@ -18,6 +19,8 @@ export type WeatherData = {
     temperature2m: Float32Array;
     weatherCode: Float32Array;
     precipitationProbability: Float32Array;
+    visibility: Float32Array;
+    uvIndex: Float32Array;
   };
 };
 

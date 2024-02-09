@@ -5,7 +5,6 @@ import { DayData } from '@/api/WeatherData';
 
 export function WeekList() {
   const { weather } = useWeather();
-
   return (
     <div className={Styles.container}>
       <p>7-DAY FORECAST</p>

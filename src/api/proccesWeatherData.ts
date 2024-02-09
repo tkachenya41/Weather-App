@@ -17,8 +17,9 @@ export function processWeatherData(response: WeatherApiResponse) {
       ).toLocaleDateString(),
       temperature2m: `${current.variables(0)!.value().toFixed()}°C`,
       relativeHumidity2m: `${current.variables(1)!.value()}%`,
-      isDay: current.variables(2)!.value(),
-      weatherCode: current.variables(2)!.value(),
+      apparentTemperature: current.variables(2)!.value(),
+      isDay: current.variables(3)!.value(),
+      weatherCode: current.variables(4)!.value(),
     },
     daily: {
       time: createRangeArray(daily, utcOffsetSeconds),
@@ -35,6 +36,14 @@ export function processWeatherData(response: WeatherApiResponse) {
       temperature2m: getNextSevenItems(hourly, currentHour, 0),
       weatherCode: getNextSevenItems(hourly, currentHour, 2),
       precipitationProbability: getNextSevenItems(hourly, currentHour, 1),
+      visibility: hourly
+        .variables(3)!
+        .valuesArray()!
+        .slice(currentHour, currentHour + 1),
+      uvIndex: hourly
+        .variables(4)!
+        .valuesArray()!
+        .slice(currentHour, currentHour + 1),
     },
   };
 }
