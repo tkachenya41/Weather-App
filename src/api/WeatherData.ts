@@ -3,12 +3,37 @@ export type WeatherData = {
     time: string;
     temperature2m: string;
     relativeHumidity2m: string;
-    isDay: string;
+    apparentTemperature: number;
+    isDay: number;
+    weatherCode: number;
   };
   daily: {
-    time: string[];
+    time: Date[];
     temperature2mMax: Float32Array;
     temperature2mMin: Float32Array;
     weatherCode: Float32Array;
+    precipitationProbability: Float32Array;
   };
+  hourly: {
+    time: Date[];
+    temperature2m: Float32Array;
+    weatherCode: Float32Array;
+    precipitationProbability: Float32Array;
+    visibility: Float32Array;
+    uvIndex: Float32Array;
+  };
+};
+
+export type HourData = {
+  time: Date | string;
+  temperature2m: string;
+  weatherCode: number;
+  precipitationProbability: number;
+};
+export type DayData = {
+  time: Date | string;
+  temperature2mMax: string;
+  temperature2mMin: string;
+  weatherCode: number;
+  precipitationProbability: number;
 };

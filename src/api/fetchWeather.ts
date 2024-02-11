@@ -1,6 +1,6 @@
 import { API_URL } from './constants';
 import { fetchWeatherApi } from 'openmeteo';
-import { processWeatherData } from './utils';
+import { processWeatherData } from './proccesWeatherData';
 
 export const fetchWeather = async ({
   latitude,
@@ -12,8 +12,26 @@ export const fetchWeather = async ({
   const params = {
     latitude: latitude,
     longitude: longitude,
-    current: ['temperature_2m', 'relative_humidity_2m', 'is_day'],
-    daily: ['temperature_2m_max', 'temperature_2m_min', 'weather_code'],
+    current: [
+      'temperature_2m',
+      'relative_humidity_2m',
+      'apparent_temperature',
+      'is_day',
+      'weather_code',
+    ],
+    daily: [
+      'temperature_2m_max',
+      'temperature_2m_min',
+      'weather_code',
+      'precipitation_probability_max',
+    ],
+    hourly: [
+      'temperature_2m',
+      'precipitation_probability',
+      'weather_code',
+      'visibility',
+      'uv_index',
+    ],
   };
 
   const responses = await fetchWeatherApi(API_URL, params);
