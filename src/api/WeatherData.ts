@@ -2,9 +2,9 @@ export type WeatherData = {
   current: {
     time: string;
     temperature2m: string;
-    relativeHumidity2m: number;
+    relativeHumidity2m: string;
     apparentTemperature: number;
-    isDay: string;
+    isDay: number;
     weatherCode: number;
   };
   daily: {
